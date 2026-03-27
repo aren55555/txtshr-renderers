@@ -3,7 +3,7 @@ import { marked } from "marked";
 // Scoped CSS injected once per page. Styles are namespaced under .txtshr-md
 // so they don't bleed into the host page.
 const STYLES = `
-.txtshr-md { color: #cbd5e1; line-height: 1.75; font-size: 0.9375rem; }
+.txtshr-md { color: #cbd5e1; line-height: 1.75; font-size: 0.9375rem; overflow-wrap: break-word; word-break: break-word; min-width: 0; }
 .txtshr-md > *:first-child { margin-top: 0 !important; }
 .txtshr-md > *:last-child  { margin-bottom: 0 !important; }
 .txtshr-md h1, .txtshr-md h2, .txtshr-md h3,
@@ -21,7 +21,7 @@ const STYLES = `
 }
 .txtshr-md pre {
   background: #0f172a; border: 1px solid #1e293b; border-radius: 8px;
-  padding: 1.1rem 1.25rem; overflow-x: auto; margin: 1.5rem 0;
+  padding: 1.1rem 1.25rem; overflow-x: auto; margin: 1.5rem 0; max-width: 100%;
 }
 .txtshr-md pre code { background: none; border: none; padding: 0; color: #e2e8f0; font-size: 0.875em; }
 .txtshr-md ul, .txtshr-md ol { padding-left: 1.75rem; margin: 1.1rem 0; }
@@ -32,7 +32,7 @@ const STYLES = `
   color: #94a3b8; margin: 1.5rem 0;
 }
 .txtshr-md blockquote p { margin: 0.5rem 0; }
-.txtshr-md table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; }
+.txtshr-md table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; display: block; overflow-x: auto; }
 .txtshr-md th, .txtshr-md td {
   border: 1px solid #334155; padding: 0.6rem 0.875rem; text-align: left;
 }
