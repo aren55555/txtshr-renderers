@@ -1,0 +1,4 @@
+node_modules/
+# NOTE: dist/ is intentionally NOT ignored.
+# jsDelivr serves files directly from the GitHub repo tree, so built bundles
+# must be committed. Run `bun run build` and commit the result.

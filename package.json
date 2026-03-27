@@ -1,0 +1,16 @@
+{
+  "name": "txtshr-renderers",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "marked": "^14.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^8.0.3"
+  }
+}
