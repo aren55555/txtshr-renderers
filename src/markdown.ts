@@ -1,4 +1,5 @@
 import { marked } from "marked";
+import type { RemoteRenderer } from "txtshr-renderer";
 
 // Scoped CSS injected once per page. Styles are namespaced under .txtshr-md
 // so they don't bleed into the host page.
@@ -47,10 +48,10 @@ const injectStyles = (): void => {
   style.id = "txtshr-md-styles";
   style.textContent = STYLES;
   document.head.appendChild(style);
-}
+};
 
-export const render = (el: HTMLElement, text: string): void => {
+export const render: RemoteRenderer["render"] = (el, text) => {
   injectStyles();
   el.className = "txtshr-md";
   el.innerHTML = marked.parse(text) as string;
-}
+};

@@ -5,7 +5,9 @@
 //
 // The decrypted text is expected to be a raw base64 string (no data URI prefix).
 
-export const render = (el: HTMLElement, text: string): void => {
+import type { RemoteRenderer } from "txtshr-renderer";
+
+export const render: RemoteRenderer["render"] = (el, text) => {
   const img = document.createElement("img");
   img.src = `data:image/jpeg;base64,${text.trim()}`;
   img.alt = "Shared image";
@@ -17,11 +19,11 @@ export const render = (el: HTMLElement, text: string): void => {
   };
 
   el.appendChild(img);
-}
+};
 
 const error = (msg: string): HTMLParagraphElement => {
   const p = document.createElement("p");
   p.style.cssText = "color:#f87171;font-size:0.875rem;";
   p.textContent = msg;
   return p;
-}
+};

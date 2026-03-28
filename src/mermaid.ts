@@ -5,6 +5,8 @@
 //
 // The decrypted text is expected to be raw Mermaid diagram syntax.
 
+import type { RemoteRenderer } from "txtshr-renderer";
+
 declare const mermaid: {
   initialize: (config: Record<string, unknown>) => void;
   render: (id: string, text: string) => Promise<{ svg: string }>;
@@ -21,7 +23,7 @@ const loadMermaid = (): Promise<void> => {
   });
 };
 
-export const render = (el: HTMLElement, text: string): void => {
+export const render: RemoteRenderer["render"] = (el, text) => {
   loadMermaid()
     .then(() => {
       mermaid.initialize({
