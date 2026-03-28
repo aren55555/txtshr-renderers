@@ -5,7 +5,7 @@
 //
 // The decrypted text is expected to be a raw base64 string (no data URI prefix).
 
-export function render(el: HTMLElement, text: string): void {
+export const render = (el: HTMLElement, text: string): void => {
   const img = document.createElement("img");
   img.src = `data:image/jpeg;base64,${text.trim()}`;
   img.alt = "Shared image";
@@ -19,7 +19,7 @@ export function render(el: HTMLElement, text: string): void {
   el.appendChild(img);
 }
 
-function error(msg: string): HTMLParagraphElement {
+const error = (msg: string): HTMLParagraphElement => {
   const p = document.createElement("p");
   p.style.cssText = "color:#f87171;font-size:0.875rem;";
   p.textContent = msg;

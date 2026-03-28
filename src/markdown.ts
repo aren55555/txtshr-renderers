@@ -41,7 +41,7 @@ const STYLES = `
 .txtshr-md img { max-width: 100%; border-radius: 6px; }
 `;
 
-function injectStyles(): void {
+const injectStyles = (): void => {
   if (document.getElementById("txtshr-md-styles")) return;
   const style = document.createElement("style");
   style.id = "txtshr-md-styles";
@@ -49,7 +49,7 @@ function injectStyles(): void {
   document.head.appendChild(style);
 }
 
-export function render(el: HTMLElement, text: string): void {
+export const render = (el: HTMLElement, text: string): void => {
   injectStyles();
   el.className = "txtshr-md";
   el.innerHTML = marked.parse(text) as string;
