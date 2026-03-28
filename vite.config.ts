@@ -9,6 +9,7 @@ export default defineConfig({
       entry: {
         markdown: "src/markdown.ts",
         jpeg: "src/jpeg.ts",
+        mermaid: "src/mermaid.ts",
       },
       formats: ["es"],
     },
