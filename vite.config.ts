@@ -11,6 +11,7 @@ export default defineConfig({
         jpeg: "src/jpeg.ts",
         mermaid: "src/mermaid.ts",
         magnet: "src/magnet.ts",
+        youtube: "src/youtube.ts",
       },
       formats: ["es"],
     },
