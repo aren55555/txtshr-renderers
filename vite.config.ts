@@ -10,6 +10,7 @@ export default defineConfig({
         markdown: "src/markdown.ts",
         jpeg: "src/jpeg.ts",
         mermaid: "src/mermaid.ts",
+        magnet: "src/magnet.ts",
       },
       formats: ["es"],
     },
