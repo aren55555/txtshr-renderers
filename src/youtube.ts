@@ -63,6 +63,8 @@ export const render: RemoteRenderer["render"] = (el, text) => {
   }
 
   const embedUrl = new URL(`https://www.youtube.com/embed/${parsed.id}`);
+  embedUrl.searchParams.set("autoplay", "1");
+  embedUrl.searchParams.set("mute", "1");
   if (parsed.start !== undefined) embedUrl.searchParams.set("start", String(parsed.start));
 
   const wrapper = document.createElement("div");

@@ -23,7 +23,7 @@ var e = () => {
 		return;
 	}
 	let o = new URL(`https://www.youtube.com/embed/${a.id}`);
-	a.start !== void 0 && o.searchParams.set("start", String(a.start));
+	o.searchParams.set("autoplay", "1"), o.searchParams.set("mute", "1"), a.start !== void 0 && o.searchParams.set("start", String(a.start));
 	let s = document.createElement("div");
 	s.className = "txtshr-youtube-wrapper";
 	let c = document.createElement("iframe");
