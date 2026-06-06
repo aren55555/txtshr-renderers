@@ -19,7 +19,7 @@ var e = {
 }), a = () => {
 	if (document.getElementById("txtshr-mermaid-styles")) return;
 	let e = document.createElement("style");
-	e.id = "txtshr-mermaid-styles", e.textContent = "\n    .txtshr-mermaid-toolbar {\n      display: flex;\n      gap: 0.5rem;\n      justify-content: flex-end;\n      padding: 0.5rem 0;\n    }\n    .txtshr-mermaid-btn {\n      background: #1e293b;\n      border: 1px solid #334155;\n      color: #cbd5e1;\n      border-radius: 0.375rem;\n      padding: 0.25rem 0.75rem;\n      font-size: 0.75rem;\n      cursor: pointer;\n      font-family: inherit;\n      transition: background 0.15s;\n    }\n    .txtshr-mermaid-btn:hover {\n      background: #334155;\n    }\n  ", document.head.appendChild(e);
+	e.id = "txtshr-mermaid-styles", e.textContent = "\n    .txtshr-mermaid-toolbar {\n      display: flex;\n      gap: 0.5rem;\n      justify-content: space-between;\n      padding: 0.5rem 0;\n    }\n    .txtshr-mermaid-btn {\n      background: #1e293b;\n      border: 1px solid #334155;\n      color: #cbd5e1;\n      border-radius: 0.375rem;\n      padding: 0.25rem 0.75rem;\n      font-size: 0.75rem;\n      cursor: pointer;\n      font-family: inherit;\n      transition: background 0.15s;\n    }\n    .txtshr-mermaid-btn:hover {\n      background: #334155;\n    }\n  ", document.head.appendChild(e);
 }, o = (o, c) => {
 	a();
 	let l = !0, u = "", d = document.createElement("div");
@@ -59,8 +59,8 @@ var e = {
 		}, m.src = p;
 	}, _ = p("Light mode", () => {
 		l = !l, _.textContent = l ? "Light mode" : "Dark mode", m(l).catch(console.error);
-	});
-	d.appendChild(p("Download SVG", h)), d.appendChild(p("Download PNG", g)), d.appendChild(_), i().then(() => m(l)).catch((e) => {
+	}), v = document.createElement("div");
+	v.style.cssText = "display:flex;gap:0.5rem;", v.appendChild(p("Download SVG", h)), v.appendChild(p("Download PNG", g)), d.appendChild(_), d.appendChild(v), i().then(() => m(l)).catch((e) => {
 		o.appendChild(s(e instanceof Error ? e.message : "Failed to render diagram."));
 	});
 }, s = (e) => {

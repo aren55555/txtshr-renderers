@@ -52,7 +52,7 @@ const injectStyles = () => {
     .txtshr-mermaid-toolbar {
       display: flex;
       gap: 0.5rem;
-      justify-content: flex-end;
+      justify-content: space-between;
       padding: 0.5rem 0;
     }
     .txtshr-mermaid-btn {
@@ -163,9 +163,13 @@ export const render: RemoteRenderer["render"] = (el, text) => {
     renderDiagram(isDark).catch(console.error);
   });
 
-  toolbar.appendChild(makeBtn("Download SVG", downloadSvg));
-  toolbar.appendChild(makeBtn("Download PNG", downloadPng));
+  const downloadGroup = document.createElement("div");
+  downloadGroup.style.cssText = "display:flex;gap:0.5rem;";
+  downloadGroup.appendChild(makeBtn("Download SVG", downloadSvg));
+  downloadGroup.appendChild(makeBtn("Download PNG", downloadPng));
+
   toolbar.appendChild(toggleBtn);
+  toolbar.appendChild(downloadGroup);
 
   // --- Initial render ---
   loadMermaid()
