@@ -18,10 +18,11 @@ There is no test runner or linter configured.
 
 ### Renderer interface
 
-Each renderer in `src/` exports a single function:
+Each renderer in `src/` exports a single function typed against `RemoteRenderer` from the `txtshr-renderer` devDependency:
 
 ```typescript
-export function render(el: HTMLElement, text: string): void
+import type { RemoteRenderer } from "txtshr-renderer";
+export const render: RemoteRenderer["render"] = (el, text) => { ... };
 ```
 
 The txtshr viewer dynamically loads a renderer and calls `render(element, rawText)`.
@@ -45,6 +46,14 @@ jsDelivr serves files directly from the GitHub repo tree. Built artifacts in `di
 3. Run `bun run build` — this produces `dist/<name>.js`
 4. Commit both source and dist files
 
+### Mermaid CDN exception
+
+The mermaid renderer is the only one that does **not** fully self-contain its dependency. It lazy-loads `mermaid@11` from jsDelivr at runtime to avoid a prohibitive bundle size. All other renderers inline their dependencies via Vite.
+
 ### Styling conventions
 
-The markdown renderer scopes all CSS under `.txtshr-md` to avoid bleeding into the host page. New renderers should follow the same pattern — inject a `<style>` tag once (guarded by a sentinel check) and namespace all styles.
+Inject CSS via a `<style>` tag guarded by a sentinel `id` check so styles are only inserted once per page. Namespace all rules under a `.txtshr-<name>` class to avoid bleeding into the host page (see `.txtshr-md` in `markdown.ts`).
+
+### Error display pattern
+
+Renderers surface errors as a `<p>` with inline style `color:#f87171;font-size:0.875rem;`. Both `jpeg.ts` and `mermaid.ts` use a local `error(msg)` / `errorEl(msg)` helper for this.
