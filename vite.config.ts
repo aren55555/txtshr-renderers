@@ -12,6 +12,7 @@ export default defineConfig({
         mermaid: "src/mermaid.ts",
         magnet: "src/magnet.ts",
         youtube: "src/youtube.ts",
+        decision: "src/decision.ts",
       },
       formats: ["es"],
     },
