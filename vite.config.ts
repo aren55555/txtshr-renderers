@@ -13,6 +13,7 @@ export default defineConfig({
         magnet: "src/magnet.ts",
         youtube: "src/youtube.ts",
         decision: "src/decision.ts",
+        spinner: "src/spinner.ts",
       },
       formats: ["es"],
     },
