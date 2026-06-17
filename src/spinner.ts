@@ -107,7 +107,10 @@ export const render: RemoteRenderer["render"] = (el, text) => {
 
     const center = start + segAngle / 2;
     const { x, y } = polarToCartesian(cx, cy, textRadius, center);
-    const rotation = center > 90 && center < 270 ? center + 180 : center;
+    // Rotate text to match the slice's own angle (no readability flip): since the
+    // wheel always settles with the winning slice at the pointer (top, angle 0),
+    // this rotation cancels out the spin exactly, keeping the winner upright.
+    const rotation = center;
 
     const chordLen = 2 * textRadius * Math.sin((segAngle * Math.PI) / 360);
     const maxChars = Math.max(3, Math.floor(chordLen / (fontSize * 0.6)));

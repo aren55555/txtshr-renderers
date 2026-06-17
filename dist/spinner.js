@@ -35,7 +35,7 @@ var e = [
 	d.classList.add("txtshr-spinner-wheel"), d.setAttribute("viewBox", "0 0 280 280"), s.forEach((t, n) => {
 		let a = n * c, o = a + c, s = document.createElementNS("http://www.w3.org/2000/svg", "path");
 		s.setAttribute("d", i(140, 140, 138, a, o)), s.setAttribute("fill", e[n % e.length]), s.setAttribute("stroke", "#0f172a"), s.setAttribute("stroke-width", "2"), d.appendChild(s);
-		let f = a + c / 2, { x: p, y: m } = r(140, 140, u, f), h = f > 90 && f < 270 ? f + 180 : f, g = 2 * u * Math.sin(c * Math.PI / 360), _ = Math.max(3, Math.floor(g / (l * .6))), v = t.length > _ ? `${t.slice(0, _ - 1)}…` : t, y = document.createElementNS("http://www.w3.org/2000/svg", "text");
+		let f = a + c / 2, { x: p, y: m } = r(140, 140, u, f), h = f, g = 2 * u * Math.sin(c * Math.PI / 360), _ = Math.max(3, Math.floor(g / (l * .6))), v = t.length > _ ? `${t.slice(0, _ - 1)}…` : t, y = document.createElementNS("http://www.w3.org/2000/svg", "text");
 		y.setAttribute("x", String(p)), y.setAttribute("y", String(m)), y.setAttribute("font-size", String(l)), y.setAttribute("text-anchor", "middle"), y.setAttribute("dominant-baseline", "middle"), y.setAttribute("transform", `rotate(${h} ${p} ${m})`), y.textContent = v, d.appendChild(y);
 	});
 	let f = document.createElement("div");
