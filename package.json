@@ -1,6 +1,6 @@
 {
   "name": "txtshr-renderers",
-  "version": "1.0.6",
+  "version": "version",
   "private": true,
   "scripts": {
     "build": "vite build",
