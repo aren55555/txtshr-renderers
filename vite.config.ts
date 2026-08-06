@@ -14,6 +14,7 @@ export default defineConfig({
         youtube: "src/youtube.ts",
         decision: "src/decision.ts",
         spinner: "src/spinner.ts",
+        bionic: "src/bionic.ts",
       },
       formats: ["es"],
     },
