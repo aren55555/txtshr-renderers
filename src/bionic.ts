@@ -13,6 +13,7 @@ const STYLES = `
 .txtshr-bionic strong {
   color: #ffffff;
   font-weight: 900;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
 }
 `;
 

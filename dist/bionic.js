@@ -1,5 +1,5 @@
 //#region src/bionic.ts
-var e = "\n.txtshr-bionic {\n  color: #cbd5e1;\n  line-height: 1.75;\n  font-size: 0.9375rem;\n  overflow-wrap: break-word;\n  word-break: break-word;\n  min-width: 0;\n  white-space: pre-wrap;\n}\n.txtshr-bionic strong {\n  color: #ffffff;\n  font-weight: 900;\n}\n", t = () => {
+var e = "\n.txtshr-bionic {\n  color: #cbd5e1;\n  line-height: 1.75;\n  font-size: 0.9375rem;\n  overflow-wrap: break-word;\n  word-break: break-word;\n  min-width: 0;\n  white-space: pre-wrap;\n}\n.txtshr-bionic strong {\n  color: #ffffff;\n  font-weight: 900;\n  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);\n}\n", t = () => {
 	if (document.getElementById("txtshr-bionic-styles")) return;
 	let t = document.createElement("style");
 	t.id = "txtshr-bionic-styles", t.textContent = e, document.head.appendChild(t);
